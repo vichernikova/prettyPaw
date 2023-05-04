@@ -1,0 +1,97 @@
+.hero {
+	position: relative;
+	background-image: url('../img/banner-hero.jpg');
+	background-image: image-set(
+		url('../img/banner-hero-2x.webp') 2x,
+		url('../img/banner-hero.webp') 1x,
+		url('../img/banner-hero-2x.jpg') 2x,
+		url('../img/banner-hero.jpg') 1x
+	);
+	background-size: cover;
+	background-position: center;
+	
+	@include md {
+		background-image: url('../img/banner-hero-big-1x.jpg');
+		background-image: image-set(
+			url('../img/banner-hero-big-1x.webp') 1x,
+			url('../img/banner-hero-big-1x.jpg') 1x
+		);
+	}
+	
+	@include xl {
+		background-image: url('../img/banner-hero-big-2x.jpg');
+		background-image: image-set(
+			url('../img/banner-hero-big-4x.webp') 4x,
+			url('../img/banner-hero-big-2x.webp') 2x,
+			url('../img/banner-hero-big-4x.jpg') 4x,
+			url('../img/banner-hero-big-2x.jpg') 2x
+		);
+	}
+	
+	@include xxl {
+		background-image: url('../img/banner-hero-big-4x.jpg');
+		background-image: image-set(
+			url('../img/banner-hero-big-4x.webp') 4x,
+			url('../img/banner-hero-big-4x.jpg') 4x
+		);
+	}
+	
+	&__container {
+		min-height: 554px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+		z-index: 10;
+		padding-bottom: 43px;
+		
+		@include lg {
+			padding-bottom: 64px;
+		}
+		
+		@include xl{
+			min-height: 780px;
+		}
+		
+		@include xxl{
+			min-height: 100vh;
+		}
+	}
+	
+	&__title {
+		font-weight: 1000;
+		font-size: 40px;
+		text-transform: uppercase;
+		color: $back;
+		margin-bottom: 5px;
+		
+		@include lg {
+			font-size: 52px;
+			line-height: 130%;
+			margin-bottom: 12px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		text-transform: uppercase;
+		color: $second;
+		
+		@include lg {
+			font-size: 40px;
+			line-height: 130%;
+		}
+	}
+	
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 5;
+		inset: 0;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 35.38%, #000000 100%);
+	}
+	
+	&__video-bg {
+		z-index: 8;
+	}
+}
