@@ -46,11 +46,12 @@
 		padding-bottom: 43px;
 		
 		@include lg {
-			padding-bottom: 64px;
+			padding-bottom: 74px;
 		}
 		
-		@include xl{
+		@include xl {
 			min-height: 780px;
+			padding-bottom: 100px;
 		}
 		
 		@include xxl{
@@ -92,6 +93,6 @@
 	}
 	
 	&__video-bg {
-		z-index: 8;
+		z-index: 4;
 	}
 }
