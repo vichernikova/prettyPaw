@@ -36,8 +36,9 @@ slidersInit('.career__slider', {
 	}
 });
 
-const videoBG = document.querySelector('.video-bg');
-videoBG.innerHTML = `
+const videoBG = document.querySelectorAll('.video-bg');
+videoBG.forEach(videoElement => videoElement.innerHTML = `
 <source src="video/video.webm" type="video/webm">
 <source src="video/video.mp4" type="video/mp4">
-`;
+`
+);
