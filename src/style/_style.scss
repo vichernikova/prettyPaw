@@ -11,6 +11,8 @@ html {
 }
 
 body {
+  max-width: 2560px;
+	margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
   font: 300 16px 'Mulish', sans-serif;
@@ -41,6 +43,7 @@ button {
 a {
   text-decoration: none;
   color: inherit;
+  transition: 0.3s;
 }
 
 ul {
@@ -129,6 +132,20 @@ iframe {
     font-size: 20px;
     gap: 10px;
   }
+  
+  &:focus {
+    border: 2px solid $main;
+  }
+  
+  &:hover {
+    color: $main;
+  }
+  
+  &:hover:after {
+    filter: invert(250%) sepia(1%) saturate(4%) hue-rotate(268deg) brightness(1%) contrast(250%);
+  }
+  
+  
 }
 
 .swiper-pagination-bullet {

@@ -3,6 +3,7 @@ import 'swiper/scss/pagination';
 import 'swiper/scss';
 import './index.scss';
 import { slidersInit } from './modules/sliders.js';
+import { burgerMenu } from './modules/burgerMenu.js';
 
 
 slidersInit('.about__slider', {
@@ -38,7 +39,10 @@ slidersInit('.career__slider', {
 
 const videoBG = document.querySelectorAll('.video-bg');
 videoBG.forEach(videoElement => videoElement.innerHTML = `
-<source src="video/video.webm" type="video/webm">
-<source src="video/video.mp4" type="video/mp4">
-`
+	<source src="video/video.webm" type="video/webm">
+	<source src="video/video.mp4" type="video/mp4">
+	`
 );
+
+
+burgerMenu();

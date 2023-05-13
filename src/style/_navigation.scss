@@ -2,9 +2,78 @@
 
 	&__list {
 		display: none;
+		
+		&-offcanvas {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: absolute;
+			overflow-y: auto;
+			background-color: $main;
+			color: $second;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			z-index: -1;
+			padding-top: 120px;
+			padding-bottom: 120px;
+		}
+		
+		@include lg {
+			padding-top: 146px;
+			padding-bottom: 146px; 
+		}
+		
+		@include xl {
+			position: static;
+			height: auto;
+			padding: 0;
+			flex-direction: row;
+			gap: 8px;
+			display: flex;
+		}
 	}
 
+	&__item {
+		font-weight: 1000;
+		line-height: 1;
+		margin-bottom: 40px;
+		font-size: 16px;
+		color: $second;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+		
+		@include xl {
+			margin-bottom: 0;
+			padding: 15px 32px;
+			border: 2px solid $back;
+			border-radius: 80px;
+		}
+		
+		&-active {
+			color: $back;
+			pointer-events: none;
+			
+			@include xl {
+				color: $second;
+				pointer-events: none;
+				background-color: $back;
+			}
+		}
+		
+		&:focus {
+			background-color: $back;
+		  }
+	}
+	
 	&__link {
+		
+		&:hover {
+			color: $back;
+		}
 	}
 
 	&__button {
@@ -18,7 +87,11 @@
 			height: 50px;
 		}
 		
-		&_active {
+		@include xl {
+			display: none;
+		}
+		
+		&-active {
 			background-image: url('../img/close.svg');
 		}
 		
